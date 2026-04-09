@@ -20,4 +20,9 @@ For this project I used an APIfrom OpenWeather https://openweathermap.org to fet
 You can get an API key for free by creating an account on OpenWeather.
 
 ##DEMO
+
+
+
+
+
 <img width="881" height="761" alt="Screenshot 2026-04-09 at 1 39 14 PM" src="https://github.com/user-attachments/assets/7fee1440-c549-4a10-b970-486f34175de7" />
