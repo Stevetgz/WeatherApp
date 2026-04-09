@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="mystyle.css">
+</head>
+<body>
+    <h1>Welcome to the weather app 🌤️</h1>
+    
+    
+    <label>Enter metrics</label>
+    <select name="myMetrics" id="myunits">
+        <option value="imperial">F°</option>
+        <option value="metric">C°</option>
+    </select>
+
+    <label>Enter City 🏙️</label>
+    <div class="middlesec">
+    <input class="userInput" id="myinput" type="text">
+
+    <button id="userbutton" onclick="myFunc()">🔎</button>
+    </div>
+    <label class ="cityLabel" id="city"></label>
+
+    <label class = "myTemp" id="temp"></label>
+    <label class="emoji" id="MyEmoji"></label>
+    <label class="mydesc" id="dsc"></label>
+    <label class="MaxTemp" id="LowMap"></label>
+    <label id="humid"></label>
+
+
+    <script>
+        async function myFunc(){
+            var mycity = document.getElementById("myinput").value;
+            var myMetric = document.getElementById("myunits").value;
+            const api_keyy = 'YOUR_API_KEY';
+
+            const myHash = {
+                "clear sky": "☀️",
+                "few clouds": "🌤️",
+                "scattered clouds": "🌥️",
+                "broken clouds": "☁️",
+                "shower rain": "🌧️",
+                "rain": "🌦️",
+                "thunderstorm": "⛈️",
+                "overcast clouds":"☁️",
+                "snow": "🌨️",
+                "mist": "🌫️"
+
+            };
+
+            const myUrl = `https://api.openweathermap.org/data/2.5/weather?q=${mycity},us&appid=${api_keyy}&units=${myMetric}`;
+            try{
+                const response = await fetch(myUrl);
+
+                if (!response.ok) throw new Error(`Error: ${response.status}`);
+
+                
+                const data = await response.json();
+                document.getElementById('temp').innerText=`${Math.round(data.main.temp)}°`;
+                document.getElementById('city').innerText =`${data.name}`;
+                const desc = (data.weather && data.weather[0]?.description || "").toLowerCase();
+                document
+                const emojii = myHash[desc] || "🌍";
+                document.getElementById('MyEmoji').innerText=`${emojii}`;
+                document.getElementById('dsc').innerText=`${desc}`;
+                document.getElementById('LowMap').innerText=`Max:${Math.round(data.main.temp_max)}°/Low:${Math.round(data.main.temp_min)}°`;
+                document.getElementById('humid').innerText=`Humidity💧: ${data.main.humidity}%`;
+            }catch (err){
+                document.getElementById('temp').innerText ="error";
+            }
+            }
+            
+        
+        
+
+    </script>
+</body>
+</html>

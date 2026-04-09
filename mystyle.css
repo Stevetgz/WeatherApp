@@ -1,0 +1,60 @@
+body{
+    background-image: linear-gradient(to right, #1f73fa, #13a5fa);
+
+}
+h1, label, select{
+    text-align: center;
+    display: block;
+    margin: 20px auto;
+
+
+
+}
+h1{
+    color: aliceblue;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+label{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: aliceblue;
+}
+.cityLabel{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: aliceblue;
+    font-size: 20px;
+}
+.temp{
+    font-size: 40px;
+}
+.myTemp{
+    font-size: 40px;
+}
+.userInput {
+    
+    
+    padding: 8px;
+    border-radius: 6px;
+    font-size: 14px;
+    border: none;
+    text-align: center;
+}
+.middlesec{
+    display: flex;
+    margin: 15px auto;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+}
+button{
+    padding: 5px 10px;
+    right: 390px;
+    top: 202px;
+    size: 10px;
+    background-color:aliceblue;
+    border: none;
+    border-radius: 8px;
+}
+button:hover{
+    transform: scale(1.1);
+}
