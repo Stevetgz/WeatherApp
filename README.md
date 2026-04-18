@@ -16,7 +16,7 @@ The weather app provides user with data like:
 -Humidity
 
 >NOTE: You do have to intert your api key on  'YOUR_API_KEY' for the data to fetch. 
-For this project I used an APIfrom OpenWeather https://openweathermap.org to fetch weather data.
+For this project I used an API from OpenWeather https://openweathermap.org to fetch weather data.
 You can get an API key for free by creating an account on OpenWeather.
 
 ##DEMO
